@@ -7,10 +7,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
+    "@angular-mdc/web": "^5.1.0",
     "@angular/animations": "~9.0.3",
     "@angular/common": "~9.0.3",
     "@angular/compiler": "~9.0.3",

@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@use './styles/body';
+
+@use '@material/theme' with (
+  $primary: #00beee,
+  $secondary: #fab31a,
+  $background: #fff,
+);
+
+@use '@material/typography/mdc-typography';
+// @use '@material/typography';
+@use './styles/button';
+@use './Styles/topBar';
+@use './Styles/textField';
+
+
+@import "~@angular-mdc/theme/material";
+
