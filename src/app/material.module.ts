@@ -4,6 +4,8 @@ import {MdcTopAppBarModule} from '@angular-mdc/web';
 import {MdcIconModule} from '@angular-mdc/web';
 import {MdcTextFieldModule} from '@angular-mdc/web';
 import {MdcTypographyModule} from '@angular-mdc/web';
+import {MdcIconButtonModule} from '@angular-mdc/web';
+import {MdcDialogModule} from '@angular-mdc/web';
 
 @NgModule({
   exports: [
@@ -11,7 +13,9 @@ import {MdcTypographyModule} from '@angular-mdc/web';
       MdcTopAppBarModule,
       MdcIconModule,
       MdcTextFieldModule,
-      MdcTypographyModule
+      MdcTypographyModule,
+      MdcIconButtonModule,
+      MdcDialogModule
 
   ]
 })

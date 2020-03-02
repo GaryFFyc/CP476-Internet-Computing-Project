@@ -1,6 +1,7 @@
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use '@material/theme';
+@use '@material/icon-button/mdc-icon-button';
 
 .button-primary {
   @include button.filled-accessible(theme.$primary);

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MdcDialog, MdcDialogRef, MDC_DIALOG_DATA } from '@angular-mdc/web';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'BookFetcher';
+  constructor(public dialog: MdcDialog) { }
+
+  openForm() {
+    // const dialogRef = this.dialog.open(DialogForm);
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(result);
+    // });
+  }
 }

@@ -1,5 +1,9 @@
 @use '@material/textfield/mdc-text-field';
 @use '@material/form-field/mdc-form-field';
+@use '@material/textfield/_index' as textfield;
+@use '@material/textfield/helper-text';
+@use '@material/theme';
+
 mdc-form-field{
     padding-left: 14px;
 }

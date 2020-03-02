@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 </head>
 
-<body class="logo">
+<body>
   <section class="header">
-    <svg class="shrine-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    <svg class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px" y="0px" width="48px" height="48px" viewBox="0 0 24 24" enable-background="new 0 0 24 24"
       xml:space="preserve" fill="#000000" focusable="false">
       <g>
@@ -24,34 +24,29 @@
         <rect fill="none" width="24" height="24" />
       </g>
     </svg>
-    <div mdcHeadline2>BookFetcher</div>
+    <div mdcHeadline2 class="title">BookFetcher</div>
   </section>
-  <!-- <section class="login"> -->
   <form>
-    <mdc-form-field>
-      <mdc-text-field label="Username" 
-      name="txt-field-standard" 
-      required></mdc-text-field>
-    </mdc-form-field>
+    <mdc-text-field label="Username" required></mdc-text-field>
 
-    <mdc-form-field>
-      <mdc-text-field label="Password" 
-      type="password" 
-      name="txt-field-password" 
-      required></mdc-text-field>
-    </mdc-form-field>
+    <mdc-text-field label="Password" type="password" required></mdc-text-field>
 
     <div class="button-container">
-      <button type="button" class="mdc-button cancel">
+
+      <button type="button" mdc-button outlined (click)="openForm()">
         Sign up
       </button>
-      <button class="mdc-button mdc-button--raised next">
-        Next
+      <button mdc-button raised submit>
+        Sign In
       </button>
     </div>
   </form>
-  <!-- </section> -->
-  <script src="bundle-login.js" async></script>
+
+  <br>
+  <div mdcBody2 class="socialPrompt">Or using social networks (School accounts only):</div>
+  <button mdcIconButton>
+    <img height="36px" src="/assets/Google.svg">
+  </button>
 </body>
 
 </html>
