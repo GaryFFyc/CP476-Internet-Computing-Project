@@ -1,0 +1,46 @@
+@use '@material/textfield/_index' as textfield;
+@use '@material/textfield/helper-text';
+@use '@material/textfield/icon';
+
+body {
+    background-color: #F4F3EE;
+    text-align: center;
+    background-attachment: fixed;
+}
+.header {
+    padding-top: 15vh;
+}
+.header .title {
+    margin-top: 28px;
+    color: var(--mdc-theme-on-primary, #442C2E);
+}
+
+.header img {
+    height: 8vh;
+    margin-left:  14px;
+    vertical-align: -10px;
+    fill: var(--mdc-theme-on-primary, #442C2E);
+}
+form {
+    display: block;
+    padding-top: 10vh;
+}
+.button-container {
+    padding-top:  8vh;
+}
+
+mdc-text-field {
+    margin-top: 14px;
+    margin-left: 14px;
+}
+
+.button-container button {
+    padding-left: 14px;
+    margin-left:  14px;
+    margin-top: 28px;
+}
+.socialPrompt {
+    margin: 14px;
+    margin-top: 26px;
+    color: var(--mdc-theme-secondary, #B89083)
+}

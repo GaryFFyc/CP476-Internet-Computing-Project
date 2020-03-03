@@ -1,0 +1,33 @@
+<mdc-dialog>
+    <mdc-dialog-container>
+      <mdc-dialog-surface>
+        <mdc-dialog-title>Create profile</mdc-dialog-title>
+        <mdc-dialog-content>
+          <form [formGroup]="profileForm" id="profileForm" (ngSubmit)="submit()" autocomplete="off">
+            <mdc-form-field fluid>
+              <mdc-text-field formControlName="name" label="Name" outlined></mdc-text-field>
+              <mdc-helper-text persistent validation>*Required</mdc-helper-text>
+            </mdc-form-field>
+            <mdc-form-field fluid>
+              <mdc-text-field type="email" formControlName="email" label="Email" maxlength="254"
+               outlined></mdc-text-field>
+              <mdc-helper-text validation>*Required</mdc-helper-text>
+            </mdc-form-field>
+            <mdc-form-field fluid>
+              <mdc-text-field formControlName="password" type="password" label="Password" maxlength="254" outlined></mdc-text-field>
+              <mdc-helper-text validation>*At least 8 characters</mdc-helper-text>
+            </mdc-form-field>
+            <mdc-form-field fluid>
+              <mdc-text-field formControlName="confirmPass" type="password" label="Confirm Password" maxlength="254"
+               outlined></mdc-text-field>
+              <mdc-helper-text validation>Password must match</mdc-helper-text>
+            </mdc-form-field>
+          </form>
+        </mdc-dialog-content>
+        <mdc-dialog-actions>
+          <button mdcDialogButton mdcDialogAction="close">Cancel</button>
+          <button mdcDialogButton form="profileForm">Create</button>
+        </mdc-dialog-actions>
+      </mdc-dialog-surface>
+    </mdc-dialog-container>
+  </mdc-dialog>

@@ -16,7 +16,6 @@ import {MdcDialogModule} from '@angular-mdc/web';
       MdcTypographyModule,
       MdcIconButtonModule,
       MdcDialogModule
-
   ]
 })
 export class MaterialModule {}

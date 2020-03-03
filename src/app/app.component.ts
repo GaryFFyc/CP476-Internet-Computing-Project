@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { MdcDialog, MdcDialogRef, MDC_DIALOG_DATA } from '@angular-mdc/web';
+import { Router } from '@angular/router';
+import { SignUpDialogComponent } from './signup-dialog/signup-dialog.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +10,8 @@ import { MdcDialog, MdcDialogRef, MDC_DIALOG_DATA } from '@angular-mdc/web';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'BookFetcher';
-  constructor(public dialog: MdcDialog) { }
 
-  openForm() {
-    // const dialogRef = this.dialog.open(DialogForm);
+  constructor() { }
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(result);
-    // });
-  }
 }
+
