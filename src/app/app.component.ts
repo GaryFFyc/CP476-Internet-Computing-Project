@@ -10,7 +10,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  username = "Developer"
 
+  destinations = [
+    { label: 'Home (Products)', icon: 'inbox', activated: true },
+    { label: 'My Profile (Saved and own listings)', icon: 'star', activated: false },
+    { label: 'Search', icon: 'search', activated: false },
+    { label: 'New Listing', icon: 'assignment', activated: false }
+  ];
   constructor() { }
 
 }

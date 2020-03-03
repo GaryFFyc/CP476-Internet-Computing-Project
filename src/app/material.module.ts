@@ -6,6 +6,8 @@ import {MdcTextFieldModule} from '@angular-mdc/web';
 import {MdcTypographyModule} from '@angular-mdc/web';
 import {MdcIconButtonModule} from '@angular-mdc/web';
 import {MdcDialogModule} from '@angular-mdc/web';
+import {MdcDrawerModule} from '@angular-mdc/web';
+import {MdcListModule} from '@angular-mdc/web';
 
 @NgModule({
   exports: [
@@ -15,7 +17,9 @@ import {MdcDialogModule} from '@angular-mdc/web';
       MdcTextFieldModule,
       MdcTypographyModule,
       MdcIconButtonModule,
-      MdcDialogModule
+      MdcDialogModule,
+      MdcDrawerModule,
+      MdcListModule
   ]
 })
 export class MaterialModule {}

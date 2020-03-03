@@ -2,10 +2,11 @@
 @use '@material/textfield/helper-text';
 @use '@material/textfield/icon';
 
-body {
+.loginPage {
     background-color: #F4F3EE;
     text-align: center;
     background-attachment: fixed;
+    height: 100%;
 }
 .header {
     padding-top: 15vh;

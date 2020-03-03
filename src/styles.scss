@@ -15,10 +15,16 @@
 @use './Styles/topBar';
 @use './Styles/textField';
 @use './Styles/dialog';
+@use './Styles/drawer';
+@use './Styles/list';
+
 
 
 @import "~@angular-mdc/theme/material";
 
 html {
+  height: 100%;
+}
+body {
   height: 100%;
 }
