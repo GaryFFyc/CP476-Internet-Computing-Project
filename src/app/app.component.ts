@@ -13,10 +13,10 @@ export class AppComponent {
   username = "Developer"
 
   destinations = [
-    { label: 'Home (Products)', icon: 'inbox', activated: true },
-    { label: 'My Profile (Saved and own listings)', icon: 'star', activated: false },
-    { label: 'Search', icon: 'search', activated: false },
-    { label: 'New Listing', icon: 'assignment', activated: false }
+    { label: 'Home (Products)', icon: 'inbox', activated: true, link: '/home' },
+    { label: 'My Profile (Saved and own listings)', icon: 'star', activated: false, link: '' },
+    { label: 'Search', icon: 'search', activated: false ,link: '/home' },
+    { label: 'New Listing', icon: 'assignment', activated: false, link: '/new-listing' }
   ];
   constructor() { }
 

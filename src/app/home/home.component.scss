@@ -1,4 +1,19 @@
 
-body {
-    height: 100%;
+@use '@material/image-list';
+
+
+.masonry-image-list {
+  @include image-list.masonry-columns(5);
+
 }
+
+// @media (max-width: 599px) {
+//   .standard-image-list {
+//     @include image-list.standard-columns(3);
+//   }
+
+//   .masonry-image-list {
+//     @include image-list.masonry-columns(3);
+//   }
+// }
+

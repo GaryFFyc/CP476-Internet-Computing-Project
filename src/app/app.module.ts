@@ -9,6 +9,7 @@ import { SignUpDialogComponent } from './signup-dialog/signup-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NewListingComponent } from './new-listing/new-listing.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { LoginComponent } from './login/login.component';
     SignUpDialogComponent,
     HomeComponent,
     LoginComponent,
+    NewListingComponent,
   ],
   imports: [
     BrowserModule,

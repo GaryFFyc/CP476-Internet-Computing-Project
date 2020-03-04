@@ -17,6 +17,11 @@
 @use './Styles/dialog';
 @use './Styles/drawer';
 @use './Styles/list';
+@use './Styles/imageList';
+@use './Styles/menu';
+@use './Styles/select';
+@use './Styles/slider';
+@use './Styles/card';
 
 
 
@@ -28,3 +33,21 @@ html {
 body {
   height: 100%;
 }
+
+
+.wrapper {
+  height: 99.7%;
+  width: 100%;
+  max-width: 100%;
+  overflow-y: scroll;
+  display: inline-block;
+  text-align: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  display: inline-block;
+}
+

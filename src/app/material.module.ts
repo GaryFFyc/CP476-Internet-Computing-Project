@@ -8,6 +8,11 @@ import {MdcIconButtonModule} from '@angular-mdc/web';
 import {MdcDialogModule} from '@angular-mdc/web';
 import {MdcDrawerModule} from '@angular-mdc/web';
 import {MdcListModule} from '@angular-mdc/web';
+import {MdcImageListModule} from '@angular-mdc/web';
+import {MdcSelectModule} from '@angular-mdc/web';
+import {MdcMenuModule} from '@angular-mdc/web';
+import {MdcSliderModule} from '@angular-mdc/web';
+import {MdcCardModule} from '@angular-mdc/web';
 
 @NgModule({
   exports: [
@@ -19,7 +24,12 @@ import {MdcListModule} from '@angular-mdc/web';
       MdcIconButtonModule,
       MdcDialogModule,
       MdcDrawerModule,
-      MdcListModule
+      MdcListModule,
+      MdcImageListModule,
+      MdcSelectModule,
+      MdcMenuModule,
+      MdcSliderModule,
+      MdcCardModule
   ]
 })
 export class MaterialModule {}
