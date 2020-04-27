@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SignUpDialogComponent } from '../signup-dialog/signup-dialog.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  userName: String;
-  password: String;
+  userName: string;
+  password: string;
   title = 'BookFetcher';
   loginForm = new FormGroup({
     username: new FormControl('', [

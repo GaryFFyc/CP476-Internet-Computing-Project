@@ -28,7 +28,7 @@ export class AuthService {
           return of(null);
         }
       })
-    )
+    );
   }
   async googleSignin() {
     const provider = new auth.GoogleAuthProvider();
@@ -45,9 +45,9 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL
-    }
+    };
 
-    return userRef.set(data, { merge: true })
+    return userRef.set(data, { merge: true });
 
   }
 

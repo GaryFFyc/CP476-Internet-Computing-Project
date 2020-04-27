@@ -15,6 +15,8 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthGuard } from './auth.guard';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     LoginComponent,
     NewListingComponent,
     UserProfileComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AngularFireStorageModule
 
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

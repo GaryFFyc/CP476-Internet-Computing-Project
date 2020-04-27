@@ -15,7 +15,7 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public username = "Developer"
+  public username = 'Developer';
 
   destinations = [
     { label: 'Home (Products)', icon: 'inbox', activated: true, link: '/home' },
@@ -25,11 +25,11 @@ export class AppComponent {
   ];
   items: Observable<any[]>;
   constructor(firestore: AngularFirestore,
-    authService: AuthService) {
+              authService: AuthService) {
     this.items = firestore.collection('listing').valueChanges();
     this.items.subscribe(items => {
       console.log(items[0].BookName);
-    })
+    });
     authService.user$.subscribe(user => {
       if (user) {
         this.username = user.displayName;
@@ -37,7 +37,7 @@ export class AppComponent {
         this.username = 'guest';
 
       }
-    })
+    });
   }
 
 }
