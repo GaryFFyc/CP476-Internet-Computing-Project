@@ -10,7 +10,7 @@
 );
 
 @use '@material/typography/mdc-typography';
-@use '@material/typography/_index' as typography;
+@use '@material/typography';
 @use './styles/button';
 @use './Styles/topBar';
 @use './Styles/textField';

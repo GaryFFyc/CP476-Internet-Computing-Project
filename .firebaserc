@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cp476bookfetcher": {
+      "hosting": {
+        "BookFetcher": [
+          "cp476bookfetcher"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cp476bookfetcher"
+  }
+}

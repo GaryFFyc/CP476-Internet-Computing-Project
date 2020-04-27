@@ -3,6 +3,8 @@ import { MdcDialog, MdcDialogRef, MDC_DIALOG_DATA } from '@angular-mdc/web';
 import { Router } from '@angular/router';
 import { SignUpDialogComponent } from './signup-dialog/signup-dialog.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,13 @@ export class AppComponent {
     { label: 'Search', icon: 'search', activated: false ,link: '/home' },
     { label: 'New Listing', icon: 'assignment', activated: false, link: '/new-listing' }
   ];
-  constructor() { }
+  items: Observable<any[]>;
+  constructor(firestore: AngularFirestore) {
+    this.items = firestore.collection('listing').valueChanges();
+    this.items.subscribe(items => {
+      console.log(items[0].BookName)
+    })
+  }
 
 }
 
