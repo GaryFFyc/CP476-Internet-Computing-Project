@@ -14,6 +14,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     HomeComponent,
     LoginComponent,
     NewListingComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

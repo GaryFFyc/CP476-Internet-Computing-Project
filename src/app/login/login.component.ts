@@ -3,6 +3,7 @@ import { MdcDialog, MdcDialogRef, MDC_DIALOG_DATA } from '@angular-mdc/web';
 import { Router } from '@angular/router';
 import { SignUpDialogComponent } from '../signup-dialog/signup-dialog.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
     ])
   });
   constructor(public dialog: MdcDialog,
-              private router: Router, ) { }
+              private router: Router,
+              public auth: AuthService, ) {  }
 
   ngOnInit(): void {
   }
@@ -40,5 +42,7 @@ export class LoginComponent implements OnInit {
     console.log('Form Submitted');
     this.router.navigate(['/home']);
   }
+
+
 
 }

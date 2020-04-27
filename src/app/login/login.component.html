@@ -1,6 +1,6 @@
 <div class="loginPage">
   <section class="header">
-    
+
     <div mdcHeadline2 class="title">BookFetcher<img src="../../assets/book6.svg"></div>
   </section>
   <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onSubmit()">
@@ -20,7 +20,7 @@
   </form>
   <br>
   <div mdcBody2 class="socialPrompt">Or using social networks (School accounts only):</div>
-  <button mdcIconButton>
+  <button mdcIconButton (click)="auth.googleSignin()">
     <img height="36px" src="/assets/Google.svg">
   </button>
 </div>
