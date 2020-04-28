@@ -17,6 +17,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth.guard';
 import { SearchComponent } from './search/search.component';
+import { ListingDetailDialogComponent } from './listing-detail-dialog/listing-detail-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SearchComponent } from './search/search.component';
     NewListingComponent,
     UserProfileComponent,
     SearchComponent,
+    ListingDetailDialogComponent,
   ],
   imports: [
     BrowserModule,

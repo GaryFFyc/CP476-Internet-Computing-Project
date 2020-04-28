@@ -1,0 +1,30 @@
+<mdc-dialog>
+  <mdc-dialog-container>
+    <mdc-dialog-surface>
+      <mdc-card class="detail">
+        <mdc-card-primary-action>
+          <img src="{{PhotoUrl}}" alt="cover image" onerror="this.onerror=null;this.src='./../assets/loading.gif'"/>
+
+          <div class="detail_primary">
+            <h2 class="detail_title" mdcHeadline6>{{bookName}}</h2>
+            <h3 class="detail_subtitle" mdcSubtitle2>Type: {{typeString}}; Condition: {{condition * 100}}%</h3>
+          </div>
+        </mdc-card-primary-action>
+        <mdc-card-actions>
+          <mdc-card-action-buttons>
+            <!-- <button mdc-button mdcCardAction="button">Comment</button> -->
+            <button mdc-button mdcCardAction="button">Contact Seller</button>
+          </mdc-card-action-buttons>
+          <h2  mdcHeadline6>${{price}}</h2>
+          <mdc-card-action-icons>
+            <button mdcIconButton mdcCardAction="icon">
+              <mdc-icon mdcIconOn>favorite</mdc-icon>
+              <mdc-icon>favorite_border</mdc-icon>
+            </button>
+            <button mdcIconButton disabled mdcCardAction="icon" icon="more_vert"></button>
+          </mdc-card-action-icons>
+        </mdc-card-actions>
+      </mdc-card>
+    </mdc-dialog-surface>
+  </mdc-dialog-container>
+</mdc-dialog>

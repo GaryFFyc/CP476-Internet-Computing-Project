@@ -5,6 +5,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Likes, User, Listing } from '../user.model';
 import { environment } from 'src/environments/environment';
+import { ListingDetailDialogComponent } from '../listing-detail-dialog/listing-detail-dialog.component';
+import { MdcDialog } from '@angular-mdc/web';
 
 
 @Component({
@@ -26,7 +28,7 @@ export class UserProfileComponent implements OnInit {
   likeItems: Observable<any>;
   listingItems: Observable<any>;
 
-  constructor(firestore: AngularFirestore, storage: AngularFireStorage, public auth: AuthService) {
+  constructor(firestore: AngularFirestore, storage: AngularFireStorage, public auth: AuthService, public dialog: MdcDialog) {
     this.Likes = [];
     this.likedBooks = [];
     this.likeItems = firestore.collection('likes').valueChanges();
@@ -67,6 +69,16 @@ export class UserProfileComponent implements OnInit {
         this.ownListings = listingItems;
         this.ownListings = this.ownListings.filter(item => item.UserId === this.UserId);
       })
+    });
+  }
+
+  openDetails(bookId: string): void {
+    const dialogRef = this.dialog.open(ListingDetailDialogComponent, {
+      data: {id: bookId}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
     });
   }
 

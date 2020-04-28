@@ -1,0 +1,44 @@
+@use '@material/theme';
+@use "@material/card";
+
+@use '@material/button';
+@use '@material/ripple/_index' as ripple;
+@use '@material/theme/color-palette' as material-color;
+
+.detail {
+  min-width: 100px;
+  width: 100%;
+  margin: 28px;
+  max-height: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail_primary {
+  padding: 1rem;
+}
+
+.detail_title {
+  margin: 0;
+}
+
+.detail_subtitle {
+  @include theme.prop(color, text-secondary-on-background);
+
+  margin: 0;
+}
+
+.detail_secondary {
+  @include theme.prop(color, text-secondary-on-background);
+
+  padding: 0 1rem 8px 1rem;
+}
+
+.detail_media {
+  background-image: url(https://material-components-web.appspot.com/images/1-1.jpg);
+}
+
+.detail_media--16-9 {
+  background-image: url(https://material-components-web.appspot.com/images/16-9.jpg);
+}

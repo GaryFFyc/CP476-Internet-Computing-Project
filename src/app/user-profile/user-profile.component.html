@@ -13,7 +13,7 @@
   <mdc-list-divider></mdc-list-divider>
   <h3 mdcListGroupSubheader>Your Favourites</h3>
   <mdc-list avatar twoLine>
-    <mdc-list-item *ngFor="let item of likedBooks">
+    <mdc-list-item (click)="openDetails(item.BookId)" *ngFor="let item of likedBooks">
       <mdc-icon mdcListItemGraphic>folder</mdc-icon>
       <mdc-list-item-text secondaryText="from User: UID_{{item.UserId}}">{{item.BookName}}</mdc-list-item-text>
     </mdc-list-item>
@@ -21,7 +21,7 @@
   <mdc-list-divider></mdc-list-divider>
   <h3 mdcListGroupSubheader>Your Listings</h3>
   <mdc-list avatar>
-    <mdc-list-item *ngFor="let item of ownListings">
+    <mdc-list-item (click)="openDetails(item.BookId)" *ngFor="let item of ownListings">
       <mdc-icon mdcListItemGraphic>folder</mdc-icon>
       {{item.BookName}}
     </mdc-list-item>

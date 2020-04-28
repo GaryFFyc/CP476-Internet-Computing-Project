@@ -3,7 +3,6 @@ import { MdcSliderChange } from '@angular-mdc/web';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { MdcLinearProgressModule } from '@angular-mdc/web/linear-progress';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Listing } from '../user.model';
 import { AuthService } from '../auth.service';
@@ -22,7 +21,7 @@ export class NewListingComponent implements OnInit {
   firestore: AngularFirestore;
   router: Router;
   condition = 0.5;
-  typeString = 'Not Specified'
+  typeString = 'Not Specified';
   typeInt = 0;
   price = 0;
   bookName = 'Not Specified'
