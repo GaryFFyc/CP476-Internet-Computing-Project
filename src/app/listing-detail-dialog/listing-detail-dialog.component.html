@@ -13,7 +13,7 @@
         <mdc-card-actions>
           <mdc-card-action-buttons>
             <!-- <button mdc-button mdcCardAction="button">Comment</button> -->
-            <button mdc-button mdcCardAction="button">Contact Seller</button>
+            <button mdc-button mdcCardAction="button" (click)="emailSeller()" style="margin-right: 20px;">Contact Seller</button>
           </mdc-card-action-buttons>
           <h2  mdcHeadline6>${{price}}</h2>
           <mdc-card-action-icons>

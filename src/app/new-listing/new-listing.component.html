@@ -8,7 +8,7 @@
         <tr>
           <td>
             <mdc-form-field fluid>
-              <mdc-text-field [value]="bookName == 'Not Specified' ? '' : bookName" (input)="onBookNameChange($event)" label="Book Name" outlined required></mdc-text-field>
+              <mdc-text-field [value]="bookName == 'Not Specified' ? '' : bookName" (input)="onBookNameChange($event)" label="Item Name" outlined required></mdc-text-field>
               <mdc-helper-text persistent validation>*Required</mdc-helper-text>
             </mdc-form-field>
           </td>
@@ -41,7 +41,7 @@
                 <mdc-slider style="display: inline-block" discrete markers [min]="0" [max]="100" [step]="10" [value]="50"
                   (input)="onInput($event)"></mdc-slider>
                   <mdc-helper-text persistent>Extensively used</mdc-helper-text>
-                  <mdc-helper-text style="float: right;" persistent>Prestine</mdc-helper-text>
+                  <mdc-helper-text style="float: right;" persistent>Pristine</mdc-helper-text>
               </mdc-form-field>
             </div>
           </td>

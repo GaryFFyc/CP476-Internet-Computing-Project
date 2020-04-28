@@ -60,7 +60,9 @@ export class ListingDetailDialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  emailSeller() {
+    window.open("mailto:youx8420@mylaurier.ca?subject=About%20your%20listing%20"+ this.bookName + "%20on%20BookFetcher&body=Hi%2C%0D%0A%0D%0AI%20am%20interested%20in%20your%20" + this.bookName + "%20that%20is%20listed%20on%20BookFetcher%2C%20Do%20you%20have%20more%20detail%20of%20it%20to%20share%3F%0D%0A%0D%0ARegards%2C%0D%0A", "_blank");
+  }
   closeDialog(): void {
     this.dialogRef.close();
   }

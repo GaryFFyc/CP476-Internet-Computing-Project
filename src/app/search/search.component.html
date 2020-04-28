@@ -7,7 +7,7 @@
     <div   class="result" style="height: 20000px;">
       <mdc-image-list *ngIf="showSearchResults" masonry textProtection class="search-image-list">
         <mdc-image-list-item *ngFor="let item of masonryImages">
-          <img mdcImageListImage src="{{item.PhotoUrl}}" onerror="this.onerror=null;this.src='./../assets/loading.gif';"  />
+          <img mdcImageListImage (click)="openDetails(item.BookId)" src="{{item.PhotoUrl}}" onerror="this.onerror=null;this.src='./../assets/loading.gif';"  />
           <mdc-image-list-supporting>
             <span mdcImageListLabel>{{item.BookName}}</span>
           </mdc-image-list-supporting>

@@ -3,24 +3,26 @@
 
     <div mdcHeadline2 class="title">BookFetcher<img src="../../assets/book6.svg"></div>
   </section>
-  <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onSubmit()">
-    <mdc-text-field [(ngModel)]="userName" formControlName="username" type="email" label="Email" required></mdc-text-field>
 
-    <mdc-text-field [(ngModel)]="password" formControlName="password" label="Password" type="password" required></mdc-text-field>
+  <button mdc-button (click)="auth.googleSignin()" raised style="margin-top: 100px; margin-bottom:100%">
+    Sign In using your MyLaurier Account
+  </button>
+
+  <!-- <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onSubmit()">
+    <mdc-text-field [(ngModel)]="userName" formControlName="username" type="email" label="Email" disabled required></mdc-text-field>
+
+    <mdc-text-field [(ngModel)]="password" formControlName="password" label="Password" type="password" disabled required></mdc-text-field>
 
     <div class="button-container">
 
-      <button type="button" mdc-button outlined (click)="openForm()">
+      <button type="button" disabled mdc-button outlined (click)="openForm()">
         Sign up
       </button>
-      <button mdc-button type="submit" raised>
-        Sign In
-      </button>
     </div>
-  </form>
-  <br>
+  </form> -->
+  <!-- <br>
   <div mdcBody2 class="socialPrompt">Or using social networks (School accounts only):</div>
   <button mdcIconButton (click)="auth.googleSignin()">
     <img height="36px" src="/assets/Google.svg">
-  </button>
+  </button> -->
 </div>

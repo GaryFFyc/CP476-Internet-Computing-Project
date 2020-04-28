@@ -4,6 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Listing } from '../user.model';
 import { environment } from 'src/environments/environment';
+import { MdcDialog } from '@angular-mdc/web/dialog';
+import { ListingDetailDialogComponent } from '../listing-detail-dialog/listing-detail-dialog.component';
 
 @Component({
   selector: 'app-search',
@@ -18,7 +20,7 @@ export class SearchComponent implements OnInit {
   items: Observable<any>;
 
   constructor(firestore: AngularFirestore,
-    storage: AngularFireStorage) {
+    storage: AngularFireStorage,public dialog: MdcDialog) {
     this.masonryImages = [];
     this.items = firestore.collection(environment.dbCollection).valueChanges();
     this.items.subscribe(items => {
@@ -27,7 +29,7 @@ export class SearchComponent implements OnInit {
       if (this.showSearchResults) {
         this.masonryImages = this.masonryImages.filter(item => {
           console.log(item.BookName + " mathches the search term: " + item.BookName.includes(this.searchTerm));
-          return item.BookName.includes(this.searchTerm)
+          return item.BookName.toUpperCase().includes(this.searchTerm.toUpperCase())
         });
       }
       this.masonryImages.forEach(item => {
@@ -55,6 +57,16 @@ export class SearchComponent implements OnInit {
         });
       }
     }
+  }
+
+  openDetails(bookId: string): void {
+    const dialogRef = this.dialog.open(ListingDetailDialogComponent, {
+      data: {id: bookId}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 
   search() {

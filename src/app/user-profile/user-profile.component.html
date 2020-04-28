@@ -9,6 +9,9 @@
     <mdc-list-item>
       <mdc-list-item-text secondaryText="{{uid}}">UserId</mdc-list-item-text>
     </mdc-list-item>
+    <mdc-list-item (click)="auth.signOut()">
+      <mdc-list-item-text  secondaryText="See you later.">Log out</mdc-list-item-text>
+    </mdc-list-item>
   </mdc-list>
   <mdc-list-divider></mdc-list-divider>
   <h3 mdcListGroupSubheader>Your Favourites</h3>
