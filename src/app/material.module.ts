@@ -13,6 +13,7 @@ import {MdcSelectModule} from '@angular-mdc/web';
 import {MdcMenuModule} from '@angular-mdc/web';
 import {MdcSliderModule} from '@angular-mdc/web';
 import {MdcCardModule} from '@angular-mdc/web';
+import {MdcLinearProgressModule} from '@angular-mdc/web';
 
 @NgModule({
   exports: [
@@ -29,7 +30,8 @@ import {MdcCardModule} from '@angular-mdc/web';
       MdcSelectModule,
       MdcMenuModule,
       MdcSliderModule,
-      MdcCardModule
+      MdcCardModule,
+      MdcLinearProgressModule
   ]
 })
 export class MaterialModule {}

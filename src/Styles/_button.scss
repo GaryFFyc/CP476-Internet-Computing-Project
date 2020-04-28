@@ -4,3 +4,7 @@
 @use '@material/button';
 @use '@material/icon-button/mdc-icon-button';
 
+.search-button {
+  @include button.shape-radius(20px);
+  margin-left: 20px;
+}

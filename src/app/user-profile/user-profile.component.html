@@ -1,25 +1,29 @@
-<div *ngIf="auth.user$ | async; then authenticated else guest">
-  <!-- template will replace this div -->
-</div>
-
-<!-- User NOT logged in -->
-<ng-template #guest>
-  <h3>Howdy, GUEST</h3>
-  <p>Login to get started...</p>
-
-  <button (click)="auth.googleSignin()">
-    <i class="fa fa-google"></i> Connect Google
-  </button>
-
-</ng-template>
-
-
-<!-- User logged in -->
-<ng-template #authenticated>
-  <div *ngIf="auth.user$ | async as user">
-    <h3>Howdy, {{ user.displayName }}</h3>
-    <img [src]="user.photoURL">
-    <p>UID: {{ user.uid }}</p>
-    <button (click)="auth.signOut()">Logout</button>
-  </div>
-</ng-template>
+<mdc-list-group style="text-align: left;"subheader="Your Information">
+  <mdc-list twoLine>
+    <mdc-list-item>
+      <mdc-list-item-text secondaryText="{{DisplayName}}">Username</mdc-list-item-text>
+    </mdc-list-item>
+    <mdc-list-item>
+      <mdc-list-item-text secondaryText="{{emailAddress}}">Email address</mdc-list-item-text>
+    </mdc-list-item>
+    <mdc-list-item>
+      <mdc-list-item-text secondaryText="{{uid}}">UserId</mdc-list-item-text>
+    </mdc-list-item>
+  </mdc-list>
+  <mdc-list-divider></mdc-list-divider>
+  <h3 mdcListGroupSubheader>Your Favourites</h3>
+  <mdc-list avatar twoLine>
+    <mdc-list-item *ngFor="let item of likedBooks">
+      <mdc-icon mdcListItemGraphic>folder</mdc-icon>
+      <mdc-list-item-text secondaryText="from User: UID_{{item.UserId}}">{{item.BookName}}</mdc-list-item-text>
+    </mdc-list-item>
+  </mdc-list>
+  <mdc-list-divider></mdc-list-divider>
+  <h3 mdcListGroupSubheader>Your Listings</h3>
+  <mdc-list avatar>
+    <mdc-list-item *ngFor="let item of ownListings">
+      <mdc-icon mdcListItemGraphic>folder</mdc-icon>
+      {{item.BookName}}
+    </mdc-list-item>
+  </mdc-list>
+</mdc-list-group>

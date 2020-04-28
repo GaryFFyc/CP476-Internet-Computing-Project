@@ -1,0 +1,38 @@
+
+@use '@material/image-list';
+.example {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 20px;
+}
+
+
+
+.search-image-list {
+  @include image-list.masonry-columns(5);
+
+}
+@media screen and (max-width: 1200px){
+  .search-image-list {
+    @include image-list.masonry-columns(4);
+
+  }
+}
+@media screen and (max-width: 1000px){
+  .search-image-list {
+    @include image-list.masonry-columns(3);
+
+  }
+}
+@media screen and (max-width: 800px){
+  .search-image-list {
+    @include image-list.masonry-columns(2);
+
+  }
+}
+// @media screen and (max-width: 600px){
+//   .home-image-list {
+//     @include image-list.masonry-columns(1);
+
+//   }
+// }

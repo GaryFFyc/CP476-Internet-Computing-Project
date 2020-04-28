@@ -7,3 +7,11 @@
 mdc-form-field{
     padding-top: 14px;
 }
+.search-field {
+  @include textfield.outline-shape-radius(50%);
+  @include textfield.fill-color(white);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 70%;
+
+}

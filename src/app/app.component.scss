@@ -3,60 +3,67 @@
 @use '@material/textfield/icon';
 
 .mdc-top-app-bar--fixed-adjust {
-    padding-top: 64px;
+  padding-top: 64px;
 }
 // .mdc-drawer.mdc-drawer--open:not(.mdc-drawer--closing)+.mdc-drawer-app-content {
 //     margin-left: 256px;
 //     margin-right: 0;
 // }
-.mdc-drawer-app-content{
-    margin-left: 256px;
-    margin-right:0;
+.mdc-drawer-app-content {
+  margin-left: 256px;
+  margin-right: 0;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
+.drawer {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  min-height: 16.7rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+
+  .mdc-drawer-scrim,
+  .mdc-drawer--modal {
+    position: absolute;
+  }
+}
+.mdc-drawer--dismissible {
+  left: 0;
+  right: auto;
+  position: absolute;
+}
+@media screen and (max-width: 1200px) {
+  .mdc-drawer-app-content {
+    margin-left: 0;
+    margin-right: 0;
     position: relative;
     height: 100%;
     box-sizing: border-box;
-
+  }
 }
-.drawer {
-    border: 1px solid rgba(0, 0, 0, .15);
-    min-height: 16.7rem;
-    overflow: hidden;
-    position: relative;
-    z-index: 0;
+.search-field {
+  color: blue;
+  @include textfield.shape-radius(50%);
+  $idle-border: rgba(blue, 0.38);
+  $hover-border: rgba(blue, 0.6);
+  $focused-border: rgba(blue, 1);
 
-    .mdc-drawer-scrim, .mdc-drawer--modal {
-      position: absolute;
-    }
-}
-.mdc-drawer--dismissible {
-    left: 0;
-    right: auto;
-    position: absolute;
-}
+  @include textfield.bottom-line-color($idle-border);
+  @include textfield.hover-bottom-line-color($hover-border);
+  @include textfield.line-ripple-color($focused-border);
+  @include textfield.ink-color(black);
+  @include textfield.label-color(rgba(blue, 0.5));
+  @include textfield.outline-color($idle-border);
+  @include textfield.hover-outline-color($hover-border);
+  @include textfield.focused-outline-color($focused-border);
+  @include helper-text.helper-text-color($idle-border);
+  @include icon.leading-icon-color($hover-border);
 
-.search-field{
-    color: blue;
-    @include textfield.shape-radius(50%);
-    $idle-border: rgba(blue, .38);
-    $hover-border: rgba(blue, .6);
-    $focused-border: rgba(blue, 1);
-
-    @include textfield.bottom-line-color($idle-border);
-    @include textfield.hover-bottom-line-color($hover-border);
-    @include textfield.line-ripple-color($focused-border);
-    @include textfield.ink-color(black);
-    @include textfield.label-color(rgba(blue, .5));
-    @include textfield.outline-color($idle-border);
-    @include textfield.hover-outline-color($hover-border);
-    @include textfield.focused-outline-color($focused-border);
-    @include helper-text.helper-text-color($idle-border);
-    @include icon.leading-icon-color($hover-border);
-
-    &.mdc-text-field--focused {
-      @include textfield.label-color(rgba(blue, .87));
-      @include icon.leading-icon-color($focused-border);
-    }
-
+  &.mdc-text-field--focused {
+    @include textfield.label-color(rgba(blue, 0.87));
+    @include icon.leading-icon-color($focused-border);
+  }
 }
 
 .demo-shaped-text-field--outline {
@@ -64,6 +71,9 @@
 }
 
 .main-content {
-    text-align: center;
+  text-align: center;
 }
 
+.demo-panel {
+  width: 100%;
+}

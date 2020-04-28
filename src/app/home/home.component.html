@@ -1,10 +1,10 @@
 <div class="wrapper">
   <div class="content">
-    <mdc-image-list masonry textProtection class="masonry-image-list">
+    <mdc-image-list masonry textProtection class="home-image-list">
       <mdc-image-list-item *ngFor="let item of masonryImages">
-        <img mdcImageListImage src="{{item.image}}" />
+        <img mdcImageListImage src="{{item.PhotoUrl}}" onerror="this.onerror=null;this.src='./../assets/loading.gif';"  />
         <mdc-image-list-supporting>
-          <span mdcImageListLabel>{{item.name}}</span>
+          <span mdcImageListLabel>{{item.BookName}}</span>
         </mdc-image-list-supporting>
       </mdc-image-list-item>
     </mdc-image-list>

@@ -12,26 +12,30 @@ import { switchMap } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-    user$: Observable<User>;
+  user$: Observable<User>;
 
-    constructor(
-        private afAuth: AngularFireAuth,
-        private afs: AngularFirestore,
-        private router: Router
-    ) { this.user$ = this.afAuth.authState.pipe(
-      switchMap(user => {
-          // Logged in
-        if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
-        } else {
-          // Logged out
-          return of(null);
-        }
-      })
-    );
+  constructor(
+    private afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private router: Router
+  ) {
+  this.user$ = this.afAuth.authState.pipe(
+    switchMap(user => {
+      // Logged in
+      if (user) {
+        return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+      } else {
+        // Logged out
+        return of(null);
+      }
+    })
+  );
   }
   async googleSignin() {
     const provider = new auth.GoogleAuthProvider();
+    provider.setCustomParameters({
+      hd: "mylaurier.ca"
+    });
     const credential = await this.afAuth.signInWithPopup(provider);
     return this.updateUserData(credential.user);
   }
@@ -46,9 +50,8 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL
     };
-
+    this.router.navigate(['/'])
     return userRef.set(data, { merge: true });
-
   }
 
   async signOut() {
@@ -57,6 +60,6 @@ export class AuthService {
   }
   isLoggedIn() {
     return this.afAuth.authState.pipe().toPromise();
- }
+  }
 
 }

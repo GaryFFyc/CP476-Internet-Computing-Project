@@ -22,6 +22,7 @@
 @use './Styles/select';
 @use './Styles/slider';
 @use './Styles/card';
+@use './Styles/linearProgress';
 
 
 
@@ -36,7 +37,7 @@ body {
 
 
 .wrapper {
-  height: 99.7%;
+  height: 99.6%;
   width: 100%;
   max-width: 100%;
   overflow-y: scroll;

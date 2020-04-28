@@ -1,67 +1,105 @@
 <div class='wrapper'>
   <div class='content'>
+
+
+    <mdc-linear-progress *ngIf="uploading"></mdc-linear-progress>
     <form>
-      <!-- <table>
-      <tr> -->
-      <mdc-form-field fluid>
-        <!-- <mdc-text-field label="Book Name" outlined required></mdc-text-field> -->
-        <!-- <mdc-helper-text persistent validation>*Required</mdc-helper-text> -->
-      </mdc-form-field>
-      <!-- </tr> -->
-      <mdc-form-field>
-        <mdc-select class="selector" #standardSelect placeholder="Type" name="my-select" required
-          [helperText]="standardSelectHelper" (selectionChange)="onSelectionChange($event)">
-          <mdc-menu class="demo-select-width" [anchorMargin]="{top: 10}">
-            <mdc-list>
-              <mdc-list-item></mdc-list-item>
-              <mdc-list-item value="Paper Book">Paper Book</mdc-list-item>
-              <mdc-list-item value="eBook">eBook</mdc-list-item>
-              <mdc-list-item value="PDF file">PDF file</mdc-list-item>
+      <table style='width:100%'>
+        <tr>
+          <td>
+            <mdc-form-field fluid>
+              <mdc-text-field [value]="bookName == 'Not Specified' ? '' : bookName" (input)="onBookNameChange($event)" label="Book Name" outlined required></mdc-text-field>
+              <mdc-helper-text persistent validation>*Required</mdc-helper-text>
+            </mdc-form-field>
+          </td>
+          <td>
+            <mdc-form-field fluid>
+              <mdc-select class="selector" #standardSelect placeholder="Type" name="my-select" required
+                [helperText]="standardSelectHelper" (selectionChange)="onSelectionChange($event)">
+                <mdc-menu class="demo-select-width" [anchorMargin]="{top: 10}">
+                  <mdc-list>
+                    <mdc-list-item disabled></mdc-list-item>
+                    <mdc-list-item value="Paper Book">Paper Book</mdc-list-item>
+                    <mdc-list-item value="eBook">eBook</mdc-list-item>
+                    <mdc-list-item value="PDF file">PDF file</mdc-list-item>
 
-            </mdc-list>
-          </mdc-menu>
+                  </mdc-list>
+                </mdc-menu>
 
-        </mdc-select>
-        <mdc-select-helper-text #standardSelectHelper validation>Field is required
-        </mdc-select-helper-text>
-      </mdc-form-field>
+              </mdc-select>
+              <mdc-select-helper-text #standardSelectHelper validation>Field is required
+              </mdc-select-helper-text>
+            </mdc-form-field>
+          </td>
+        </tr>
+        <!-- Slider -->
+        <tr>
+          <td colspan="2">
+            <div>
+              <mdc-form-field style="overflow: hidden">
+                <div mdcBody1>Present Condition</div>
+                <mdc-slider style="display: inline-block" discrete markers [min]="0" [max]="100" [step]="10" [value]="50"
+                  (input)="onInput($event)"></mdc-slider>
+                  <mdc-helper-text persistent>Extensively used</mdc-helper-text>
+                  <mdc-helper-text style="float: right;" persistent>Prestine</mdc-helper-text>
+              </mdc-form-field>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mdc-form-field fluid>
+              <div mdcBody1>Please select a photo as your listing's cover</div>
+            </mdc-form-field>
+          </td>
+          <td>
+            <mdc-form-field fluid>
+              <input type="file" id="file" accept='image/*' #userPhoto (change)="onFileSelected($event)" required>
+            </mdc-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <mdc-form-field fluid>
+              <mdc-text-field [value]="price" (input)="onBookPriceChange($event)" label="Price" type="number" outlined required></mdc-text-field>
+              <mdc-helper-text persistent validation>*Required</mdc-helper-text>
+            </mdc-form-field>
+          </td>
+        </tr>
+
+
+      </table>
+
       <!-- Cards -->
-      <mdc-card class="demo-card">
+      <div mdcHeadline5 style="margin-top:30px">Preview</div>
+      <mdc-card class="preview">
         <mdc-card-primary-action>
-          <mdc-card-media class="demo-card__media--16-9" wide></mdc-card-media>
-          <div class="demo-card__primary">
-            <h2 class="demo-card__title" mdcHeadline6>Name</h2>
-            <h3 class="demo-card__subtitle" mdcSubtitle2>Author</h3>
-          </div>
-          <div class="demo-card__secondary" mdcBody2>
-            Visit ten places on our planet that are undergoing the biggest changes today.
+          <mdc-card-media *ngIf="!picUploaded" class="preview__media--16-9" wide></mdc-card-media>
+          <img  *ngIf="picUploaded" src="{{downloadUrlStr}}" alt="cover image"/>
+
+          <div class="preview__primary">
+            <h2 class="preview__title" mdcHeadline6>{{bookName}}</h2>
+            <h3 class="preview__subtitle" mdcSubtitle2>Type: {{typeString}}; Condition: {{condition * 100}}%</h3>
           </div>
         </mdc-card-primary-action>
         <mdc-card-actions>
           <mdc-card-action-buttons>
             <!-- <button mdc-button mdcCardAction="button">Comment</button> -->
-            <button mdc-button mdcCardAction="button">Add Comments</button>
+            <button mdc-button mdcCardAction="button" disabled>Contact Seller</button>
           </mdc-card-action-buttons>
+          <h2  mdcHeadline6>${{price}}</h2>
           <mdc-card-action-icons>
-            <button mdcIconButton mdcCardAction="icon">
-              <mdc-icon mdcIconOn>favorite</mdc-icon>
+            <button mdcIconButton disabled mdcCardAction="icon">
+              <mdc-icon mdcIconOn >favorite</mdc-icon>
               <mdc-icon>favorite_border</mdc-icon>
             </button>
-            <button mdcIconButton mdcCardAction="icon" icon="share"></button>
-            <button mdcIconButton mdcCardAction="icon" icon="more_vert"></button>
+            <button mdcIconButton disabled mdcCardAction="icon" icon="more_vert"></button>
           </mdc-card-action-icons>
         </mdc-card-actions>
       </mdc-card>
-      <!-- Slider -->
-      <div mdcBody1>Present Condition</div>
-      <mdc-slider discrete markers [min]="0" [max]="100" [step]="5" [value]="20" (input)="onInput($event)"
-        (change)="onChange($event)"></mdc-slider>
 
-      <button mdc-button class="demo-button-primary">Post</button>
-
-
-      <!-- </table> -->
-
+      <button mdc-button (click)="submit()"  class="post-button" [disabled]="!picUploaded || bookName == 'Not Specified' || typeInt == 0 || uploading">{{postBtnText}}</button>
     </form>
+
   </div>
 </div>
